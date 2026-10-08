@@ -1,0 +1,16 @@
+[
+  {
+    "id": "project_1",
+    "title": "Voorbeeldproject 1",
+    "description": "Vervang dit door de inhoud van je eigen projects.json. De velden zijn id, title, description, skills en image.",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "image": null
+  },
+  {
+    "id": "project_2",
+    "title": "Voorbeeldproject 2",
+    "description": "Een project zonder image krijgt automatisch de standaard projectafbeelding. Afbeeldingen zet je in public/assets/images en verwijs je ernaar als /assets/images/naam.png.",
+    "skills": ["PHP", "Laravel"],
+    "image": null
+  }
+]

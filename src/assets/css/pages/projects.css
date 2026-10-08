@@ -1,0 +1,165 @@
+/* Alle projecten in één grid, wrapt vanzelf naar 3 / 2 / 1 per rij */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.project {
+    padding: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    max-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.project-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-details {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* Titel & beschrijving */
+.project-title {
+    font-family: 'Lobster Two', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.project-title h2 {
+    font-size: inherit;
+}
+
+.project-description { font-size: 18px; }
+
+.description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+
+/* Tekst onder elkaar i.p.v. horizontaal scrollen, regeleinden behouden */
+.full-description {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+/* ======== Modal styling begin ======== */
+
+.full-description-modal, .modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.full-description-modal.active, .modal-overlay.active {
+    pointer-events: auto;
+}
+
+.full-description-modal.active {
+    opacity: 1;
+}
+
+.modal-overlay.active {
+    opacity: 0.8;
+}
+
+.modal-overlay {
+    background: var(--bg-dark);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    display: block;
+    z-index: 5;
+    inset: 0;
+}
+
+.full-description-modal {
+    background-color: var(--bg-light);
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 50vh); /* gebruik 50vh anders 90% van het scherm */
+    height: fit-content;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* ======== Modal styling eind ======== */
+
+.project-actions {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.project-skill-container {
+    display: grid;
+    gap: 10px;
+    min-height: 90px;
+    align-items: center;
+    justify-items: center;
+}
+
+.project-skill-container.columns-1 { grid-template-columns: 1fr; }
+.project-skill-container.columns-2 { grid-template-columns: repeat(2, 1fr); }
+
+.project-skill {
+    background-color: var(--subtle-color);
+    color: var(--button-text);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.toggle-text, .hide-modal {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Lobster Two', sans-serif;
+    color: var(--button-text);
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 10px;
+}

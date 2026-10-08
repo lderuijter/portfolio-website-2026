@@ -1,0 +1,66 @@
+/* Basic reset voor de hele page */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root variabelen */
+:root {
+    --white-text: hsl(0 0% 95%);
+}
+
+/* Dark theme variabelen */
+body.dark {
+    --bg-dark: hsl(0 0% 0%);
+    --bg: hsl(0 0% 5%);
+    --bg-light: hsl(0 0% 10%);
+    --navbar-color: hsl(0, 0%, 20%);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --button-text: hsl(0 0% 95%);
+    --button-color: hsl(0, 58%, 51%);
+    --subtle-color: #FF7070;
+}
+
+/* Light theme variabelen */
+body.light {
+    --bg-dark: hsl(0 0% 90%);
+    --bg: hsl(0 0% 95%);
+    --bg-light: hsl(0 0% 100%);
+    --navbar-color: hsl(0, 0%, 75%);
+    --text: hsl(0 0% 5%);
+    --text-muted: hsl(0 0% 30%);
+    --button-text: hsl(0 0% 95%);
+    --button-color: hsl(211, 92%, 56%);
+    --subtle-color: #73B3F8;
+}
+
+/* font, background en color voor de gehele body */
+body {
+    font-family: 'Lobster Two', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Main section (view) */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+main h1 {
+    font-size: 34px;
+    padding: 20px;
+}
+
+.errors p {
+    font-family: sans-serif;
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
