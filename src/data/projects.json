@@ -1,16 +1,37 @@
 [
   {
     "id": "project_1",
-    "title": "Voorbeeldproject 1",
-    "description": "Vervang dit door de inhoud van je eigen projects.json. De velden zijn id, title, description, skills en image.",
-    "skills": ["HTML", "CSS", "JavaScript"],
-    "image": null
+    "title": "Stage Reyez!",
+    "description": "Tijdens mijn stage heb ik me verdiept in PHP en Laravel. Mijn opdracht was het ontwikkelen van een promotiewebsite met een formulier waarmee klanten een demowebsite laten genereren. Deze demo bevat het contentmanagementsysteem Nuna, zodat klanten het een uur lang kunnen uitproberen. Voor het genereren van de demo's werkte ik ook met scripting op een Linux-omgeving.",
+    "skills": ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "Linux"],
+    "image": "/assets/images/reyez.png"
   },
   {
     "id": "project_2",
-    "title": "Voorbeeldproject 2",
-    "description": "Een project zonder image krijgt automatisch de standaard projectafbeelding. Afbeeldingen zet je in public/assets/images en verwijs je ernaar als /assets/images/naam.png.",
-    "skills": ["PHP", "Laravel"],
-    "image": null
+    "title": "AI Food Prep PWA",
+    "description": "Een schoolproject website die je responsief kan gebruiken op desktop op telefoon. De PWA is gemaakt voor het voorbereiden van maaltijden voor de hele week. Je kan recepten aanmaken met ingrediënten uit een API. Ontbrekende data en aanbevelingen worden voorspeld met Machine Learning.",
+    "skills": ["PHP", "Laravel", "Python", "Linux", "MongoDB", "API"],
+    "image": "/assets/images/leanbatch.png"
+  },
+  {
+    "id": "project_3",
+    "title": "Pasimo",
+    "description": " Pasimo is het examenproject van mijn MBO studie. Pasimo werkt als een in en uitklok systeem voor de studenten met hun Scalda pas.\n\nDeze tijden worden opgeslagen voor de presentie van elke student. Alle informatie over de studenten staat ook in het systeem.\n\nBijvoorbeeld in welke cohort een student zit, in welk klasgroep de student zit en of de student op stage is of op school. Ook kan je zien wie er afgestudeerd is of gestopt is. Voor de rest heeft de applicatie nog wat extra functies zoals het aanmaken van een rooster en klaslokaal.",
+    "skills": ["HTML", "CSS", "JavaScript", "Java", "Hibernate", "MySQL"],
+    "image": "/assets/images/pasimo.png"
+  },
+  {
+    "id": "project_4",
+    "title": "Slidehub",
+    "description": " In het derde leerjaar van mijn MBO studie ben ik samen met 5 anderen begonnen aan de wederopbouw van Slidehub. De webapplicatie is gebouwd om slides aan te kunnen maken voor de slideshow op de grote schermen, om zo belangrijke informatie over te brengen naar de studenten.",
+    "skills": ["HTML", "CSS", "JavaScript", "Java", "Hibernate", "MySQL"],
+    "image": "/assets/images/slidehub.png"
+  },
+  {
+    "id": "project_5",
+    "title": "Stage ZES",
+    "description": "Tijdens mijn stage heb ik Symfony geleerd met tutorials via SymfonyCasts. Daarna heb ik meegewerkt aan een lopend project. De webapplicatie is voor andere bedrijven om hun gehele reparatie proces in kaart te brengen van klanten, een soort logistiek overzicht. Hierin had je een cockpit met een aantal statistieken, zo kan je makkelijk de status in zien. Ik moest Excel regels met data omzet naar cockpit regels door middel van PHP.",
+    "skills": ["PHP", "Symfony", "Python", "HTML", "CSS", "JavaScript"],
+    "image": "/assets/images/default.png"
   }
 ]

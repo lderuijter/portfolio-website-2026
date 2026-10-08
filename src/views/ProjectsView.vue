@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
     :class="{ active: activeProject }"
     role="dialog"
     aria-modal="true"
-    :aria-hidden="!activeProject"
+    :aria-hidden="true"
   >
     <span class="full-description">{{ activeProject?.description }}</span>
     <button class="hide-modal" type="button" @click="activeProject = null">Lees minder</button>

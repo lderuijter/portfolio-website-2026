@@ -10,11 +10,12 @@
     <div class="about-me-text">
       <h2>Lucas de Ruijter</h2>
       <p>
-        Ik heb altijd al interesse gehad in de ICT-sector en ik vind het leuk om te programmeren.
-        Ik ben iemand die oplossingsgericht is ingesteld. Verder houd ik van uitdagend werk.
-        Ook ben ik heel nauwkeurig en word ik omschreven als een echte doorzetter.
-        Ik ben sterk gemotiveerd om innovatieve en functionele applicaties en websites te
-        ontwikkelen met een leuk softwareteam.
+        Sinds jongs af aan heb ik veel interesse in de ICT-sector. Ik heb
+        affiniteit met programmeren en ik ben oplossingsgericht
+        ingesteld. Ik word beschreven als een echte doorzetter die houdt
+        van uitdagend werk. Ik ben sterk gemotiveerd om innovatieve en
+        functionele webapplicaties te ontwikkelen met een gehecht
+        softwareteam.
       </p>
     </div>
     <div class="about-me-icons">
@@ -31,7 +32,7 @@
 
   <div class="project-preview-container">
     <div class="preview-image project-1">
-      <img src="https://lucasderuijter.vercel.app/public/generate-form.png" alt="preview-project">
+      <img src="/assets/images/reyez.png" alt="preview-project">
     </div>
     <div class="preview-image project-2">
       <img src="/assets/images/leanbatch.png" alt="preview-project">
