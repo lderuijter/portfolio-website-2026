@@ -5,17 +5,37 @@ import projects from '../data/projects.json'
 const MAX_LENGTH = 100
 const DEFAULT_IMAGE = '/assets/images/default.png'
 
-// Het project waarvan de volledige beschrijving in de modal staat
-const activeProject = ref(null)
+// isOpen bepaalt of de modal zichtbaar is, modalProject blijft staan tijdens het wegfaden
+const isOpen = ref(false)
+const modalProject = ref(null)
 
-// Knipt af op een woord, zodat we niet midden in een woord eindigen
+function openModal(project) {
+  modalProject.value = project
+  isOpen.value = true
+}
+
+function closeModal() {
+  isOpen.value = false
+}
+
+// Knipt af op een woord en zet er "…" achter
 function truncateOnWord(text, maxLength = MAX_LENGTH) {
   if (text.length <= maxLength) {
     return text
   }
-  const truncated = text.slice(0, maxLength)
-  const lastSpace = truncated.lastIndexOf(' ')
-  return lastSpace !== -1 ? truncated.slice(0, lastSpace) : truncated
+
+  let truncated = text.slice(0, maxLength)
+
+  // Zit het afkappunt midden in een woord? Ga dan terug naar de laatste spatie
+  if (!/\s/.test(text[maxLength])) {
+    const lastSpace = truncated.lastIndexOf(' ')
+    if (lastSpace !== -1) {
+      truncated = truncated.slice(0, lastSpace)
+    }
+  }
+
+  // Losse leestekens aan het eind weghalen voor de puntjes
+  return truncated.replace(/[\s,.;:!?-]+$/, '') + '…'
 }
 
 function skillColumns(project) {
@@ -23,7 +43,7 @@ function skillColumns(project) {
 }
 
 // Niet meer scrollen zolang de modal open is
-watch(activeProject, (value) => {
+watch(isOpen, (value) => {
   document.body.style.overflow = value ? 'hidden' : ''
 })
 
@@ -43,8 +63,8 @@ onBeforeUnmount(() => {
     <div v-for="project in projects" :key="project.id" class="project">
       <div class="project-image">
         <img
-          :src="project.image || DEFAULT_IMAGE"
-          :alt="project.image ? project.title : 'Standaard projectafbeelding'"
+            :src="project.image || DEFAULT_IMAGE"
+            :alt="project.image ? project.title : 'Standaard projectafbeelding'"
         >
       </div>
 
@@ -58,10 +78,10 @@ onBeforeUnmount(() => {
             <span class="short-description">{{ truncateOnWord(project.description) }}</span>
           </div>
           <button
-            v-if="project.description.length > MAX_LENGTH"
-            class="toggle-text"
-            type="button"
-            @click="activeProject = project"
+              v-if="project.description.length > MAX_LENGTH"
+              class="toggle-text"
+              type="button"
+              @click="openModal(project)"
           >
             Lees meer
           </button>
@@ -84,15 +104,16 @@ onBeforeUnmount(() => {
   </div>
 
   <!-- Modal voor de volledige beschrijving -->
-  <div class="modal-overlay" :class="{ active: activeProject }" @click="activeProject = null"></div>
+  <div class="modal-overlay" :class="{ active: isOpen }" @click="closeModal"></div>
   <div
-    class="full-description-modal"
-    :class="{ active: activeProject }"
-    role="dialog"
-    aria-modal="true"
-    :aria-hidden="true"
+      class="full-description-modal"
+      :class="{ active: isOpen }"
+      role="dialog"
+      aria-modal="true"
+      :aria-hidden="!isOpen"
+      :inert="!isOpen"
   >
-    <span class="full-description">{{ activeProject?.description }}</span>
-    <button class="hide-modal" type="button" @click="activeProject = null">Lees minder</button>
+    <span class="full-description">{{ modalProject?.description }}</span>
+    <button class="hide-modal" type="button" @click="closeModal">Lees minder</button>
   </div>
 </template>

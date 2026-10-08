@@ -13,10 +13,11 @@ function readTheme() {
 
 const theme = ref(readTheme())
 
-// Class op de body zetten, de CSS-variabelen hangen hieraan
+// Class op de body (CSS-variabelen) en op html (achtergrond) zetten
 function applyTheme(value) {
   document.body.classList.toggle('light', value === 'light')
   document.body.classList.toggle('dark', value === 'dark')
+  document.documentElement.classList.toggle('light', value === 'light')
 }
 
 export function initTheme() {

@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import { initTheme } from './composables/useTheme'
 
+import '@fontsource/lobster-two/400.css'
+import '@fontsource/lobster-two/700.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+
 // Eerst de componenten
 import './assets/css/components/main.css'
 import './assets/css/components/footer.css'

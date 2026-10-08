@@ -54,11 +54,6 @@
 .project-description { font-size: 18px; }
 
 .description-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: pre-line;
 }
 
