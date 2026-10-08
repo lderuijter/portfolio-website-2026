@@ -34,7 +34,7 @@
       <img src="https://lucasderuijter.vercel.app/public/generate-form.png" alt="preview-project">
     </div>
     <div class="preview-image project-2">
-      <img src="/assets/images/ProjectCardAdmin.png" alt="preview-project">
+      <img src="/assets/images/leanbatch.png" alt="preview-project">
     </div>
     <div class="preview-button">
       <RouterLink to="/projects">

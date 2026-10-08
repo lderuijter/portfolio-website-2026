@@ -29,8 +29,7 @@ watch(() => route.fullPath, () => {
     <div class="nav-links" :class="{ show: open }" :inert="!open">
       <RouterLink to="/" exact-active-class="active">Home</RouterLink>
       <RouterLink to="/projects" exact-active-class="active">Projects</RouterLink>
-      <a target="_blank" rel="noopener" href="/assets/resume/Lucas_cv_2025.pdf">CV</a>
-      <RouterLink to="/contact" exact-active-class="active">Contact</RouterLink>
+      <a target="_blank" rel="noopener" href="/assets/resume/CV_2026_Lucas_de_Ruijter.pdf">CV</a>
     </div>
   </div>
 </template>
